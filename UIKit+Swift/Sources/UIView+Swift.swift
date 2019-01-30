@@ -64,11 +64,15 @@ public extension UIView {
 
 public extension UIView {
     
-    /// Adds a border from the receiver on the given edge.
-    /// - parameter edge: The edge to add a border to.
-    /// - parameter color: The color of the border.
-    /// - parameter thickness: The thickness of the border (defaults to hairline for the given
-    /// device scale.
+    /**
+     Adds a border from the receiver on the given edge.
+ 
+     - Parameters:
+        - edge: The edge to add a border to.
+        - color: The color of the border.
+        - thickness: The thickness of the border (defaults to hairline for the given
+        device scale.
+     */
     public func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat = 1 / UIScreen.main.scale) {
         if edge == .all {
             self.borderColor = color
@@ -103,8 +107,12 @@ public extension UIView {
         self.addSubview(borderView)
     }
     
-    /// Removes a border from the receiver on the given edge.
-    /// - parameter edge: The edge to remove the border from.
+    /**
+     Removes a border from the receiver on the given edge.
+     
+     - Parameters:
+        - edge: The edge to remove the border from.
+     */
     public func removeBorder(edge: UIRectEdge) {
         if edge == .all {
             self.borderColor = nil
