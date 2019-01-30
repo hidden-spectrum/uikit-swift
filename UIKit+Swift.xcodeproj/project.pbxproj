@@ -11,6 +11,7 @@
 		F8DCCC4E2202319B00172D70 /* UIKit_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DCCC402202319B00172D70 /* UIKit_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8DCCC642202474F00172D70 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F8DCCC622202474F00172D70 /* LICENSE */; };
 		F8DCCC652202474F00172D70 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8DCCC632202474F00172D70 /* README.md */; };
+		F8DCCC6722024FC600172D70 /* UIView+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DCCC6622024FC600172D70 /* UIView+Swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		F8DCCC4D2202319B00172D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8DCCC622202474F00172D70 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F8DCCC632202474F00172D70 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F8DCCC6622024FC600172D70 /* UIView+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Swift.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				F8DCCC402202319B00172D70 /* UIKit_Swift.h */,
+				F8DCCC6622024FC600172D70 /* UIView+Swift.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8DCCC6722024FC600172D70 /* UIView+Swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +445,7 @@
 		F8DCCC552202319B00172D70 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9KV23QHW5;
 				INFOPLIST_FILE = "UIKit+SwiftTests/Assets/Plists/Info.plist";
@@ -459,6 +464,7 @@
 		F8DCCC562202319B00172D70 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9KV23QHW5;
 				INFOPLIST_FILE = "UIKit+SwiftTests/Assets/Plists/Info.plist";
