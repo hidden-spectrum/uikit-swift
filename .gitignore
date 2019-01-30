@@ -1,0 +1,14 @@
+# Mac OS X
+*.swp
+*.swo
+.DS_Store
+
+# Dependency Managers
+Carthage
+Pods
+
+# Xcode
+*xcuserdata
+*DerivedData
+*xccheckout
+*xcscmblueprint
