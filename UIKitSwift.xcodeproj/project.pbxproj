@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F8DCCC472202319B00172D70 /* UIKit_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DCCC3D2202319B00172D70 /* UIKit_Swift.framework */; };
+		F8DCCC472202319B00172D70 /* UIKitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */; };
 		F8DCCC4E2202319B00172D70 /* UIKit_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DCCC402202319B00172D70 /* UIKit_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8DCCC642202474F00172D70 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F8DCCC622202474F00172D70 /* LICENSE */; };
 		F8DCCC652202474F00172D70 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8DCCC632202474F00172D70 /* README.md */; };
@@ -27,10 +27,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F8DCCC3D2202319B00172D70 /* UIKit_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKit_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DCCC402202319B00172D70 /* UIKit_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKit_Swift.h; sourceTree = "<group>"; };
 		F8DCCC412202319B00172D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F8DCCC462202319B00172D70 /* UIKit+SwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UIKit+SwiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8DCCC462202319B00172D70 /* UIKitSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DCCC4D2202319B00172D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8DCCC622202474F00172D70 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F8DCCC632202474F00172D70 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8DCCC472202319B00172D70 /* UIKit_Swift.framework in Frameworks */,
+				F8DCCC472202319B00172D70 /* UIKitSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,8 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				F8DCCC3E2202319B00172D70 /* Products */,
-				F8DCCC3F2202319B00172D70 /* UIKit+Swift */,
-				F8DCCC4A2202319B00172D70 /* UIKit+SwiftTests */,
+				F8DCCC3F2202319B00172D70 /* UIKitSwift */,
+				F8DCCC4A2202319B00172D70 /* UIKitSwiftTests */,
 				F8DCCC622202474F00172D70 /* LICENSE */,
 				F8DCCC632202474F00172D70 /* README.md */,
 			);
@@ -72,27 +72,27 @@
 		F8DCCC3E2202319B00172D70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F8DCCC3D2202319B00172D70 /* UIKit_Swift.framework */,
-				F8DCCC462202319B00172D70 /* UIKit+SwiftTests.xctest */,
+				F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */,
+				F8DCCC462202319B00172D70 /* UIKitSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F8DCCC3F2202319B00172D70 /* UIKit+Swift */ = {
+		F8DCCC3F2202319B00172D70 /* UIKitSwift */ = {
 			isa = PBXGroup;
 			children = (
 				F8DCCC57220231A700172D70 /* Assets */,
 				F8DCCC59220231CB00172D70 /* Sources */,
 			);
-			path = "UIKit+Swift";
+			path = UIKitSwift;
 			sourceTree = "<group>";
 		};
-		F8DCCC4A2202319B00172D70 /* UIKit+SwiftTests */ = {
+		F8DCCC4A2202319B00172D70 /* UIKitSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
 				F8DCCC5D220231E300172D70 /* Assets */,
 			);
-			path = "UIKit+SwiftTests";
+			path = UIKitSwiftTests;
 			sourceTree = "<group>";
 		};
 		F8DCCC57220231A700172D70 /* Assets */ = {
@@ -152,9 +152,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F8DCCC3C2202319B00172D70 /* UIKit+Swift */ = {
+		F8DCCC3C2202319B00172D70 /* UIKitSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8DCCC512202319B00172D70 /* Build configuration list for PBXNativeTarget "UIKit+Swift" */;
+			buildConfigurationList = F8DCCC512202319B00172D70 /* Build configuration list for PBXNativeTarget "UIKitSwift" */;
 			buildPhases = (
 				F8DCCC382202319B00172D70 /* Headers */,
 				F8DCCC392202319B00172D70 /* Sources */,
@@ -165,14 +165,14 @@
 			);
 			dependencies = (
 			);
-			name = "UIKit+Swift";
+			name = UIKitSwift;
 			productName = "UIKit+Swift";
-			productReference = F8DCCC3D2202319B00172D70 /* UIKit_Swift.framework */;
+			productReference = F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F8DCCC452202319B00172D70 /* UIKit+SwiftTests */ = {
+		F8DCCC452202319B00172D70 /* UIKitSwiftTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8DCCC542202319B00172D70 /* Build configuration list for PBXNativeTarget "UIKit+SwiftTests" */;
+			buildConfigurationList = F8DCCC542202319B00172D70 /* Build configuration list for PBXNativeTarget "UIKitSwiftTests" */;
 			buildPhases = (
 				F8DCCC422202319B00172D70 /* Sources */,
 				F8DCCC432202319B00172D70 /* Frameworks */,
@@ -183,9 +183,9 @@
 			dependencies = (
 				F8DCCC492202319B00172D70 /* PBXTargetDependency */,
 			);
-			name = "UIKit+SwiftTests";
+			name = UIKitSwiftTests;
 			productName = "UIKit+SwiftTests";
-			productReference = F8DCCC462202319B00172D70 /* UIKit+SwiftTests.xctest */;
+			productReference = F8DCCC462202319B00172D70 /* UIKitSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F8DCCC372202319B00172D70 /* Build configuration list for PBXProject "UIKit+Swift" */;
+			buildConfigurationList = F8DCCC372202319B00172D70 /* Build configuration list for PBXProject "UIKitSwift" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -219,8 +219,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F8DCCC3C2202319B00172D70 /* UIKit+Swift */,
-				F8DCCC452202319B00172D70 /* UIKit+SwiftTests */,
+				F8DCCC3C2202319B00172D70 /* UIKitSwift */,
+				F8DCCC452202319B00172D70 /* UIKitSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +267,7 @@
 /* Begin PBXTargetDependency section */
 		F8DCCC492202319B00172D70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F8DCCC3C2202319B00172D70 /* UIKit+Swift */;
+			target = F8DCCC3C2202319B00172D70 /* UIKitSwift */;
 			targetProxy = F8DCCC482202319B00172D70 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -406,7 +406,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/UIKit+Swift/Assets/Plists/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/UIKitSwift/Assets/Plists/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -433,7 +433,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/UIKit+Swift/Assets/Plists/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/UIKitSwift/Assets/Plists/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,13 +454,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9KV23QHW5;
-				INFOPLIST_FILE = "UIKit+SwiftTests/Assets/Plists/Info.plist";
+				INFOPLIST_FILE = UIKitSwiftTests/Assets/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andrewtheis.UIKit-SwiftTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.theisholdings.uikitswift.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -473,13 +473,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9KV23QHW5;
-				INFOPLIST_FILE = "UIKit+SwiftTests/Assets/Plists/Info.plist";
+				INFOPLIST_FILE = UIKitSwiftTests/Assets/Plists/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.andrewtheis.UIKit-SwiftTests";
+				PRODUCT_BUNDLE_IDENTIFIER = com.theisholdings.uikitswift.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -489,7 +489,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8DCCC372202319B00172D70 /* Build configuration list for PBXProject "UIKit+Swift" */ = {
+		F8DCCC372202319B00172D70 /* Build configuration list for PBXProject "UIKitSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8DCCC4F2202319B00172D70 /* Debug */,
@@ -498,7 +498,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8DCCC512202319B00172D70 /* Build configuration list for PBXNativeTarget "UIKit+Swift" */ = {
+		F8DCCC512202319B00172D70 /* Build configuration list for PBXNativeTarget "UIKitSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8DCCC522202319B00172D70 /* Debug */,
@@ -507,7 +507,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8DCCC542202319B00172D70 /* Build configuration list for PBXNativeTarget "UIKit+SwiftTests" */ = {
+		F8DCCC542202319B00172D70 /* Build configuration list for PBXNativeTarget "UIKitSwiftTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8DCCC552202319B00172D70 /* Debug */,

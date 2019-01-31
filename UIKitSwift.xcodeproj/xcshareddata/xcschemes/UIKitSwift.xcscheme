@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F8DCCC3C2202319B00172D70"
-               BuildableName = "UIKit_Swift.framework"
-               BlueprintName = "UIKit+Swift"
-               ReferencedContainer = "container:UIKit+Swift.xcodeproj">
+               BuildableName = "UIKitSwift.framework"
+               BlueprintName = "UIKitSwift"
+               ReferencedContainer = "container:UIKitSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F8DCCC452202319B00172D70"
-               BuildableName = "UIKit+SwiftTests.xctest"
-               BlueprintName = "UIKit+SwiftTests"
-               ReferencedContainer = "container:UIKit+Swift.xcodeproj">
+               BuildableName = "UIKitSwiftTests.xctest"
+               BlueprintName = "UIKitSwiftTests"
+               ReferencedContainer = "container:UIKitSwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8DCCC3C2202319B00172D70"
-            BuildableName = "UIKit_Swift.framework"
-            BlueprintName = "UIKit+Swift"
-            ReferencedContainer = "container:UIKit+Swift.xcodeproj">
+            BuildableName = "UIKitSwift.framework"
+            BlueprintName = "UIKitSwift"
+            ReferencedContainer = "container:UIKitSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8DCCC3C2202319B00172D70"
-            BuildableName = "UIKit_Swift.framework"
-            BlueprintName = "UIKit+Swift"
-            ReferencedContainer = "container:UIKit+Swift.xcodeproj">
+            BuildableName = "UIKitSwift.framework"
+            BlueprintName = "UIKitSwift"
+            ReferencedContainer = "container:UIKitSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F8DCCC3C2202319B00172D70"
-            BuildableName = "UIKit_Swift.framework"
-            BlueprintName = "UIKit+Swift"
-            ReferencedContainer = "container:UIKit+Swift.xcodeproj">
+            BuildableName = "UIKitSwift.framework"
+            BlueprintName = "UIKitSwift"
+            ReferencedContainer = "container:UIKitSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
