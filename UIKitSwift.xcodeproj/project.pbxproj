@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F8DCCC472202319B00172D70 /* UIKitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */; };
-		F8DCCC4E2202319B00172D70 /* UIKit_Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DCCC402202319B00172D70 /* UIKit_Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8DCCC4E2202319B00172D70 /* UIKitSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DCCC402202319B00172D70 /* UIKitSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8DCCC642202474F00172D70 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F8DCCC622202474F00172D70 /* LICENSE */; };
 		F8DCCC652202474F00172D70 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8DCCC632202474F00172D70 /* README.md */; };
 		F8DCCC6722024FC600172D70 /* UIView+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DCCC6622024FC600172D70 /* UIView+Swift.swift */; };
@@ -28,7 +28,7 @@
 
 /* Begin PBXFileReference section */
 		F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8DCCC402202319B00172D70 /* UIKit_Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKit_Swift.h; sourceTree = "<group>"; };
+		F8DCCC402202319B00172D70 /* UIKitSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitSwift.h; sourceTree = "<group>"; };
 		F8DCCC412202319B00172D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8DCCC462202319B00172D70 /* UIKitSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DCCC4D2202319B00172D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			children = (
 				F8DCCC6C2202633F00172D70 /* ReusableViews+Swift.swift */,
 				F8DCCC6A2202507E00172D70 /* Storyboards+Swift.swift */,
-				F8DCCC402202319B00172D70 /* UIKit_Swift.h */,
+				F8DCCC402202319B00172D70 /* UIKitSwift.h */,
 				F8DCCC6622024FC600172D70 /* UIView+Swift.swift */,
 			);
 			path = Sources;
@@ -145,7 +145,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8DCCC4E2202319B00172D70 /* UIKit_Swift.h in Headers */,
+				F8DCCC4E2202319B00172D70 /* UIKitSwift.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
