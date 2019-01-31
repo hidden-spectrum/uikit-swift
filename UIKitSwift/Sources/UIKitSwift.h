@@ -22,8 +22,8 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for UIKit_Swift.
-FOUNDATION_EXPORT double UIKit_SwiftVersionNumber;
+//! Project version number for UIKitSwift.
+FOUNDATION_EXPORT double UIKitSwiftVersionNumber;
 
-//! Project version string for UIKit_Swift.
-FOUNDATION_EXPORT const unsigned char UIKit_SwiftVersionString[];
+//! Project version string for UIKitSwift.
+FOUNDATION_EXPORT const unsigned char UIKitSwiftVersionString[];
