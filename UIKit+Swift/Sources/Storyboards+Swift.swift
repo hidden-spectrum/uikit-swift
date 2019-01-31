@@ -20,6 +20,9 @@
 //  THE SOFTWARE.
 //
 
+import UIKit
+
+
 /**
  A lightweight type that stores the name of an available storyboard in the project.
  

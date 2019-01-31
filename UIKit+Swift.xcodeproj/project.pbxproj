@@ -13,6 +13,7 @@
 		F8DCCC652202474F00172D70 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F8DCCC632202474F00172D70 /* README.md */; };
 		F8DCCC6722024FC600172D70 /* UIView+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DCCC6622024FC600172D70 /* UIView+Swift.swift */; };
 		F8DCCC6B2202507E00172D70 /* Storyboards+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DCCC6A2202507E00172D70 /* Storyboards+Swift.swift */; };
+		F8DCCC6D2202633F00172D70 /* ReusableViews+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DCCC6C2202633F00172D70 /* ReusableViews+Swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		F8DCCC632202474F00172D70 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F8DCCC6622024FC600172D70 /* UIView+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Swift.swift"; sourceTree = "<group>"; };
 		F8DCCC6A2202507E00172D70 /* Storyboards+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboards+Swift.swift"; sourceTree = "<group>"; };
+		F8DCCC6C2202633F00172D70 /* ReusableViews+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableViews+Swift.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 		F8DCCC59220231CB00172D70 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				F8DCCC6C2202633F00172D70 /* ReusableViews+Swift.swift */,
 				F8DCCC6A2202507E00172D70 /* Storyboards+Swift.swift */,
 				F8DCCC402202319B00172D70 /* UIKit_Swift.h */,
 				F8DCCC6622024FC600172D70 /* UIView+Swift.swift */,
@@ -248,6 +251,7 @@
 			files = (
 				F8DCCC6B2202507E00172D70 /* Storyboards+Swift.swift in Sources */,
 				F8DCCC6722024FC600172D70 /* UIView+Swift.swift in Sources */,
+				F8DCCC6D2202633F00172D70 /* ReusableViews+Swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

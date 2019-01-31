@@ -20,7 +20,7 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for UIKit_Swift.
 FOUNDATION_EXPORT double UIKit_SwiftVersionNumber;
