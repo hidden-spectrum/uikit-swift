@@ -25,8 +25,8 @@ import MapKit
 
 /// A protocol that UI componants can conform to that are reusable (ie. `UITableViewCell`).
 ///
-/// By default, all UIView confirm to this type via default extension where `resuseIdentifier` is the
-/// same name as the class type. Because of this, you should use the class name as the reuse
+/// By default, all UIView confirm to this type via default extension where `resuseIdentifier` is
+/// the same name as the class type. Because of this, you should use the class name as the reuse
 /// identifier in your Interface Builder files.
 public protocol ReuseIdentifiable {
     
@@ -47,8 +47,8 @@ extension ReuseIdentifiable where Self: MKAnnotationView {
     ///
     /// - Note: You must have a concrete subclass on `MKAnnotationView` to use this method.
     ///
-    /// - Warning: This will throw an `fatalError` if there is a mismatch between the dequeued view and
-    /// the type of the receiver.
+    /// - Warning: This will throw an `fatalError` if there is a mismatch between the dequeued view
+    /// and the type of the receiver.
     ///
     /// - Parameters:
     ///     - mapView: The `MKMapView` to dequeue the annotation view from.
@@ -64,13 +64,13 @@ extension ReuseIdentifiable where Self: MKAnnotationView {
 
 extension ReuseIdentifiable where Self: UITableViewCell {
    
-    /// Convenience method for dequeuing a `UITableViewCell` for an unknown index path without having
-    /// to define the reuse identifier.
+    /// Convenience method for dequeuing a `UITableViewCell` for an unknown index path without
+    /// having to define the reuse identifier.
     ///
     /// - Note: You must have a concrete subclass on `UITableViewCell` to use this method.
     ///
-    /// - Warning: This will throw an `fatalError` if there is a mismatch between the dequeued table cell
-    /// and the type of the receiver.
+    /// - Warning: This will throw an `fatalError` if there is a mismatch between the dequeued table
+    /// cell and the type of the receiver.
     ///
     /// - Parameters:
     ///     - tableView: The `UITableView` to dequeue the table cell from.
@@ -88,8 +88,8 @@ extension ReuseIdentifiable where Self: UITableViewCell {
     ///
     /// - Note: You must have a concrete subclass on `UITableViewCell` to use this method.
     ///
-    /// - Warning: This will throw an `fatalError` if there is a mismatch between the dequeued table cell
-    /// and the type of the receiver.
+    /// - Warning: This will throw an `fatalError` if there is a mismatch between the dequeued table
+    /// cell and the type of the receiver.
     ///
     /// - Parameters:
     ///     - tableView: The `UITableView` to dequeue the table cell from.
