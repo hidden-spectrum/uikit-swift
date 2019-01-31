@@ -20,21 +20,17 @@
 //  THE SOFTWARE.
 //
 
-import UIKit
 
-
-/**
- A lightweight type that stores the name of an available storyboard in the project.
- 
- - You should extend this struct to include references to all your available storyboards:
- 
- ```
- extension StoryboardReference {
-    static let login = StoryboardReference("Login")
-    static let main = StoryboardReference("Main")
- }
- ```
- */
+/// A lightweight type that stores the name of an available storyboard in the project.
+///
+///  - You should extend this struct to include references to all your available storyboards:
+///
+/// ```
+/// extension StoryboardReference {
+///     static let login = StoryboardReference("Login")
+///     static let main = StoryboardReference("Main")
+/// }
+/// ```
 public struct StoryboardReference {
     public let name: String
     
@@ -44,12 +40,11 @@ public struct StoryboardReference {
 }
 
 
-/**
- A protocol that UIKit types can conform to if they can be referenced in a Storyboard by a name. By
- default, UIViewController has been conformed to this protocol via a default extension that uses
- the class name as the `storyboardIdentifier`. Therefore, your UIViewControllers should have the
- same name as the class in your storyboards.
- */
+/// A protocol that UIKit types can conform to if they can be referenced in a Storyboard by a name.
+///
+/// By default, UIViewController has been conformed to this protocol via a default extension that
+/// uses the class name as the `storyboardIdentifier`. Therefore, your UIViewControllers should have
+/// the same name as the class in your storyboards.
 public protocol StoryboardIdentifiable {
     static var storyboardIdentifier: String { get }
 }
@@ -60,22 +55,24 @@ public extension StoryboardIdentifiable where Self: UIViewController {
     }
 }
 
+extension UIViewController: StoryboardIdentifiable {
+}
+
 
 public extension UIStoryboard {
-    /**
-     A convenience initializer that allows you to instantiate a storyboard from a
-     `StoryboardReference`.
-     
-     - Parameter reference: Name of the storyboard as it exists in your project (excluding file the
-     file extension).
-     
-     - Example:
-     ```
-     let storyboard = UIStoryboard(.main)
-     ```
-     
-     See `StoryboardReference` for more info.
-    */
+    /// A convenience initializer that allows you to instantiate a storyboard from a
+    /// `StoryboardReference`.
+    ///
+    /// - Parameters:
+    ///     - reference: Name of the storyboard as it exists in your project (excluding file the
+    ///     file extension).
+    ///
+    /// - Example:
+    /// ```
+    /// let storyboard = UIStoryboard(.main)
+    /// ```
+    ///
+    /// See `StoryboardReference` for more info.
     public convenience init(_ reference: StoryboardReference) {
         self.init(name: reference.name, bundle: nil)
     }
@@ -87,8 +84,4 @@ public extension UIStoryboard {
         
         return viewController
     }
-}
-
-
-extension UIViewController: StoryboardIdentifiable {
 }
