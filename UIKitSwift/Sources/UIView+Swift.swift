@@ -71,7 +71,7 @@ public extension UIView {
     ///     - edge: The edge to add a border to.
     ///     - color: The color of the border.
     ///     - thickness: The thickness of the border (defaults to hairline for the given
-    ///     device scale.
+    ///     device scale).
     public func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat = 1 / UIScreen.main.scale) {
         if edge == .all {
             self.borderColor = color
