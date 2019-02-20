@@ -20,7 +20,6 @@
 //  THE SOFTWARE.
 //
 
-
 /// A lightweight type that stores the name of an available storyboard in the project.
 ///
 ///  - You should extend this struct to include references to all your available storyboards:

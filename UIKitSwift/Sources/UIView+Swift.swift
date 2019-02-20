@@ -20,7 +20,6 @@
 //  THE SOFTWARE.
 //
 
-
 // MARK: Interface Builder Inspectable Properties
 
 public extension UIView {
