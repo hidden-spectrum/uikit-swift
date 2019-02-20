@@ -43,7 +43,7 @@ public protocol KeyboardPresentationObserver {
     func removeKeyboardPresentationHandlers()
 }
 
-extension KeyboardPresentationObserver {
+public extension KeyboardPresentationObserver {
     func setKeyboardWillShowHandler(_ block: @escaping KeyboardPresentationInfoBlock) {
         self.setKeyboardObserver(for: UIResponder.keyboardWillShowNotification, handler: block)
     }
