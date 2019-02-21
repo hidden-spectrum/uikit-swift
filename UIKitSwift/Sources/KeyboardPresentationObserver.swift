@@ -33,6 +33,11 @@ public protocol KeyboardPresentationObserver {
     /// - Warning: To prevent retain cycles, you must declare `[weak self]` in your block.
     func setKeyboardWillShowHandler(_ block: @escaping KeyboardPresentationInfoBlock)
     
+    /// Sets the handler to call when the keyboard frame is about to change.
+    /// - Note: There can only be one `frameWillChange` handler at a time.
+    /// - Warning: To prevent retain cycles, you must declare `[weak self]` in your block.
+    func setKeyboardWillChangeFrameHandler(_ block: @escaping KeyboardPresentationInfoBlock)
+    
     /// Sets the handler to call when the keyboard is about to hide.
     /// - Note: There can only be one `willHide` handler at a time.
     /// - Warning: To prevent retain cycles, you must declare `[weak self]` in your block.
@@ -48,12 +53,17 @@ public extension KeyboardPresentationObserver {
         self.setKeyboardObserver(for: UIResponder.keyboardWillShowNotification, handler: block)
     }
     
+    func setKeyboardWillChangeFrameHandler(_ block: @escaping KeyboardPresentationInfoBlock) {
+        self.setKeyboardObserver(for: UIResponder.keyboardWillChangeFrameNotification, handler: block)
+    }
+    
     func setKeyboardWillHideHandler(_ block: @escaping KeyboardPresentationInfoBlock) {
         self.setKeyboardObserver(for: UIResponder.keyboardWillHideNotification, handler: block)
     }
     
     func removeKeyboardPresentationHandlers() {
         self.removeKeyboardObserver(for: UIResponder.keyboardWillShowNotification)
+        self.removeKeyboardObserver(for: UIResponder.keyboardWillChangeFrameNotification)
         self.removeKeyboardObserver(for: UIResponder.keyboardWillHideNotification)
     }
     
@@ -72,8 +82,8 @@ public extension KeyboardPresentationObserver {
         guard let userInfo = notification.userInfo,
             let endFrameValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
             let animationDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
-            else {
-                return nil
+        else {
+            return nil
         }
         return KeyboardPresentationInfo(frameEndRect: endFrameValue.cgRectValue, animationDuration: animationDuration)
     }
