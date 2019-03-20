@@ -50,32 +50,38 @@ public protocol KeyboardPresentationObserver {
 
 public extension KeyboardPresentationObserver {
     func setKeyboardWillShowHandler(_ block: @escaping KeyboardPresentationInfoBlock) {
-        self.setKeyboardObserver(for: UIResponder.keyboardWillShowNotification, handler: block)
+        self.setKeyboardObserver(for: UIResponder.keyboardWillShowNotification, storeNotificationTokenUsingAssociationKey: &.willShow, handler: block)
     }
     
     func setKeyboardWillChangeFrameHandler(_ block: @escaping KeyboardPresentationInfoBlock) {
-        self.setKeyboardObserver(for: UIResponder.keyboardWillChangeFrameNotification, handler: block)
+        self.setKeyboardObserver(for: UIResponder.keyboardWillChangeFrameNotification, storeNotificationTokenUsingAssociationKey: &.willChange, handler: block)
     }
     
     func setKeyboardWillHideHandler(_ block: @escaping KeyboardPresentationInfoBlock) {
-        self.setKeyboardObserver(for: UIResponder.keyboardWillHideNotification, handler: block)
+        self.setKeyboardObserver(for: UIResponder.keyboardWillHideNotification, storeNotificationTokenUsingAssociationKey: &.willHide, handler: block)
     }
     
     func removeKeyboardPresentationHandlers() {
-        self.removeKeyboardObserver(for: UIResponder.keyboardWillShowNotification)
-        self.removeKeyboardObserver(for: UIResponder.keyboardWillChangeFrameNotification)
-        self.removeKeyboardObserver(for: UIResponder.keyboardWillHideNotification)
+        self.removeKeyboardObserver(usingNotificationTokenStoredWithAssociationKey: &.willShow)
+        self.removeKeyboardObserver(usingNotificationTokenStoredWithAssociationKey: &.willChange)
+        self.removeKeyboardObserver(usingNotificationTokenStoredWithAssociationKey: &.willHide)
     }
     
-    private func setKeyboardObserver(for notificationName: Notification.Name, handler: @escaping KeyboardPresentationInfoBlock) {
-        self.removeKeyboardObserver(for: notificationName)
-        NotificationCenter.default.addObserver(forName: notificationName, object: nil, queue: nil) { (notification) in
+    private func setKeyboardObserver(
+        for notificationName: Notification.Name,
+        storeNotificationTokenUsingAssociationKey associationKey: UnsafePointer<KeyboardNotificationTokenAssociationKey>,
+        handler: @escaping KeyboardPresentationInfoBlock
+    ) {
+        self.removeKeyboardObserver(usingNotificationTokenStoredWithAssociationKey: associationKey)
+        
+        let notificationToken = NotificationCenter.default.addObserver(forName: notificationName, object: nil, queue: nil) { (notification) in
             guard let keyboardInfo = self.keyboardInfo(from: notification) else {
                 os_log("Notification missing keyboard information: %{public}@", log: .uiKitSwift, type: .error, notification.debugDescription)
                 return
             }
             handler(keyboardInfo)
         }
+        objc_setAssociatedObject(self, associationKey, notificationToken, .OBJC_ASSOCIATION_RETAIN)
     }
     
     private func keyboardInfo(from notification: Notification) -> KeyboardPresentationInfo? {
@@ -88,8 +94,11 @@ public extension KeyboardPresentationObserver {
         return KeyboardPresentationInfo(frameEndRect: endFrameValue.cgRectValue, animationDuration: animationDuration)
     }
     
-    private func removeKeyboardObserver(for notificationName: Notification.Name) {
-        NotificationCenter.default.removeObserver(self, name: notificationName, object: nil)
+    private func removeKeyboardObserver(usingNotificationTokenStoredWithAssociationKey associationKey: UnsafePointer<KeyboardNotificationTokenAssociationKey>) {
+        guard let notificationToken = objc_getAssociatedObject(self, associationKey) as? NSObjectProtocol else {
+            return
+        }
+        NotificationCenter.default.removeObserver(notificationToken)
     }
 }
 
@@ -100,3 +109,10 @@ public struct KeyboardPresentationInfo {
 }
 
 public typealias KeyboardPresentationInfoBlock = ((KeyboardPresentationInfo) -> Void)
+
+
+private class KeyboardNotificationTokenAssociationKey {
+    static var willShow = KeyboardNotificationTokenAssociationKey()
+    static var willChange = KeyboardNotificationTokenAssociationKey()
+    static var willHide = KeyboardNotificationTokenAssociationKey()
+}
