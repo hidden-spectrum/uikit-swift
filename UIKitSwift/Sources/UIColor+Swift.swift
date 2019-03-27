@@ -21,7 +21,7 @@
 //
 
 public extension UIColor {
-    public convenience init(hex: UInt32, alpha: CGFloat = 1.0) {
+    convenience init(hex: UInt32, alpha: CGFloat = 1.0) {
         let red = (hex >> 16) & 0xff
         let green = (hex >> 8) & 0xff
         let blue = hex & 0xff

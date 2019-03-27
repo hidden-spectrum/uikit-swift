@@ -49,7 +49,7 @@ public protocol StoryboardIdentifiable {
 }
 
 public extension StoryboardIdentifiable where Self: UIViewController {
-    public static var storyboardIdentifier: String {
+    static var storyboardIdentifier: String {
         return String(describing: self)
     }
 }
@@ -72,11 +72,11 @@ public extension UIStoryboard {
     /// ```
     ///
     /// See `StoryboardReference` for more info.
-    public convenience init(_ reference: StoryboardReference) {
+    convenience init(_ reference: StoryboardReference) {
         self.init(name: reference.name, bundle: nil)
     }
     
-    public func instantiateViewController<T: UIViewController>() -> T {
+    func instantiateViewController<T: UIViewController>() -> T {
         guard let viewController = self.instantiateViewController(withIdentifier: T.storyboardIdentifier) as? T else {
             fatalError("Couldn't instantiate view controller with identifier \(T.storyboardIdentifier) ")
         }

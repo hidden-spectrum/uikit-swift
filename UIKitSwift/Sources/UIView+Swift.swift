@@ -25,7 +25,7 @@
 public extension UIView {
     
     /// Inspectable variable that exposes the view's layer border color to Interface Builder.
-    @IBInspectable public var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         get {
             if let borderColor = self.layer.borderColor {
                 return UIColor(cgColor: borderColor)
@@ -39,7 +39,7 @@ public extension UIView {
     }
     
     /// Inspectable variable that exposes the view's layer border width to Interface Builder.
-    @IBInspectable public var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         get {
             return self.layer.borderWidth
         }
@@ -49,7 +49,7 @@ public extension UIView {
     }
     
     /// Inspectable variable that exposes the view's layer corner radius to Interface Builder.
-    @IBInspectable public var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return self.layer.cornerRadius
         }
@@ -71,7 +71,7 @@ public extension UIView {
     ///     - color: The color of the border.
     ///     - thickness: The thickness of the border (defaults to hairline for the given
     ///     device scale).
-    public func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat = 1 / UIScreen.main.scale) {
+    func addBorder(edge: UIRectEdge, color: UIColor, thickness: CGFloat = 1 / UIScreen.main.scale) {
         if edge == .all {
             self.borderColor = color
             self.borderWidth = thickness
@@ -109,7 +109,7 @@ public extension UIView {
     ///
     /// - Parameters:
     ///    - edge: The edge to remove the border from.
-    public func removeBorder(edge: UIRectEdge) {
+    func removeBorder(edge: UIRectEdge) {
         if edge == .all {
             self.borderColor = nil
             self.borderWidth = 0
