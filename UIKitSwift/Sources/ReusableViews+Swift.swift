@@ -94,6 +94,29 @@ extension ReuseIdentifiable where Self: MKAnnotationView {
     }
 }
 
+extension ReuseIdentifiable where Self: UICollectionViewCell {
+    
+    /// Convenience method for dequeuing a `UICollectionViewCell` without having to define the reuse
+    /// identifier.
+    ///
+    /// - Note: You must have a concrete subclass on `UICollectionViewCell` to use this method.
+    ///
+    /// - Warning: This will throw an `fatalError` if there is a mismatch between the dequeued table
+    /// cell and the type of the receiver.
+    ///
+    /// - Parameters:
+    ///     - collectionView: The `UICollectionView` to dequeue the table cell from.
+    ///     - indexPath: The `IndexPath` the cell will be placed at.
+    ///
+    /// - Returns: Instance of the collection cell dequeued from the collection view.
+    public static func dequeue(from collectionView: UICollectionView, for indexPath: IndexPath) -> Self {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? Self else {
+            fatalError("Could not dequeue cell \(self.reuseIdentifier) from \(collectionView)")
+        }
+        return cell
+    }
+}
+
 extension ReuseIdentifiable where Self: UITableViewCell {
    
     /// Convenience method for dequeuing a `UITableViewCell` for an unknown index path without
