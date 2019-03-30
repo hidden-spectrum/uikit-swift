@@ -23,6 +23,38 @@
 import MapKit
 
 
+/// Conform to this protocol if you have a UIView with a xib whose filename matches the type name.
+public protocol NibIdentifiable {
+   
+    /// The nib name of the receiver.
+    static var nibName: String { get }
+}
+
+extension NibIdentifiable {
+    public static var nibName: String {
+        return String(describing: self)
+    }
+}
+
+extension NibIdentifiable where Self: UICollectionViewCell {
+    
+    /// Handles boilerplate of registering the receiver with a collection view.
+    public static func register(with collectionView: UICollectionView) {
+        let nib = UINib(nibName: self.nibName, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: self.reuseIdentifier)
+    }
+}
+
+extension NibIdentifiable where Self: UITableViewCell {
+    
+    /// Handles boilerplate of registering the receiver with a table view.
+    public static func register(with tableView: UITableView) {
+        let nib = UINib(nibName: self.nibName, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: self.reuseIdentifier)
+    }
+}
+
+
 /// A protocol that UI componants can conform to that are reusable (ie. `UITableViewCell`).
 ///
 /// By default, all UIView confirm to this type via default extension where `resuseIdentifier` is
