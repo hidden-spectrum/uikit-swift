@@ -36,6 +36,7 @@
 		F8168F61221CEFE70095CAED /* KeyboardPresentationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPresentationObserver.swift; sourceTree = "<group>"; };
 		F8168F63221CF0010095CAED /* OSLog+UIKitSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+UIKitSwift.swift"; sourceTree = "<group>"; };
 		F840C14A2228C044006A340A /* UIColor+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Swift.swift"; sourceTree = "<group>"; };
+		F8BF188A227CB23D0069305C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8DCCC402202319B00172D70 /* UIKitSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitSwift.h; sourceTree = "<group>"; };
 		F8DCCC412202319B00172D70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 				F8DCCC4A2202319B00172D70 /* UIKitSwiftTests */,
 				F80B4F0C220A910D0045730B /* Cartfile */,
 				F8DCCC622202474F00172D70 /* LICENSE */,
+				F8BF188A227CB23D0069305C /* Package.swift */,
 				F8DCCC632202474F00172D70 /* README.md */,
 			);
 			sourceTree = "<group>";
