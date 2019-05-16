@@ -15,6 +15,10 @@ public protocol ItemContainer {
 /// Contains an arbitrary array of Equatable items.
 public struct Section<T: Equatable>: ItemContainer {
     public let items: [T]
+    
+    public init(items: [T]) {
+        self.items = items
+    }
 }
 
 
