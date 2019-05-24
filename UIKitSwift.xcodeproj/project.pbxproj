@@ -11,6 +11,7 @@
 		F80B4F10220A92570045730B /* JGProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80B4F0F220A92570045730B /* JGProgressHUD.framework */; };
 		F8168F62221CEFE70095CAED /* KeyboardPresentationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8168F61221CEFE70095CAED /* KeyboardPresentationObserver.swift */; };
 		F8168F64221CF0010095CAED /* OSLog+UIKitSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8168F63221CF0010095CAED /* OSLog+UIKitSwift.swift */; };
+		F83CFABB2297793C00133EC1 /* UITableView+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CFABA2297793C00133EC1 /* UITableView+Swift.swift */; };
 		F840C14B2228C044006A340A /* UIColor+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F840C14A2228C044006A340A /* UIColor+Swift.swift */; };
 		F8DCCC472202319B00172D70 /* UIKitSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */; };
 		F8DCCC4E2202319B00172D70 /* UIKitSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DCCC402202319B00172D70 /* UIKitSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +37,7 @@
 		F80B4F0F220A92570045730B /* JGProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JGProgressHUD.framework; path = Carthage/Build/iOS/JGProgressHUD.framework; sourceTree = "<group>"; };
 		F8168F61221CEFE70095CAED /* KeyboardPresentationObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardPresentationObserver.swift; sourceTree = "<group>"; };
 		F8168F63221CF0010095CAED /* OSLog+UIKitSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+UIKitSwift.swift"; sourceTree = "<group>"; };
+		F83CFABA2297793C00133EC1 /* UITableView+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Swift.swift"; sourceTree = "<group>"; };
 		F840C14A2228C044006A340A /* UIColor+Swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Swift.swift"; sourceTree = "<group>"; };
 		F8BF188A227CB23D0069305C /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		F8DCCC3D2202319B00172D70 /* UIKitSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 				F8DCCC6A2202507E00172D70 /* Storyboards+Swift.swift */,
 				F840C14A2228C044006A340A /* UIColor+Swift.swift */,
 				F8DCCC402202319B00172D70 /* UIKitSwift.h */,
+				F83CFABA2297793C00133EC1 /* UITableView+Swift.swift */,
 				F8DCCC6622024FC600172D70 /* UIView+Swift.swift */,
 				F80B4F0A220A90030045730B /* UniversalProgressHUD.swift */,
 			);
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83CFABB2297793C00133EC1 /* UITableView+Swift.swift in Sources */,
 				F8E70D12228D04D700F565D6 /* ItemContainer.swift in Sources */,
 				F840C14B2228C044006A340A /* UIColor+Swift.swift in Sources */,
 				F80B4F0B220A90030045730B /* UniversalProgressHUD.swift in Sources */,
