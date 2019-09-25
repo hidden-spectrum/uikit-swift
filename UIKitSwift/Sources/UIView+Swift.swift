@@ -20,6 +20,9 @@
 //  THE SOFTWARE.
 //
 
+import UIKit
+
+
 // MARK: Interface Builder Inspectable Properties
 
 public extension UIView {

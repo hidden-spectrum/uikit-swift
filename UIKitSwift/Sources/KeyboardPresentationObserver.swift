@@ -21,6 +21,7 @@
 //
 
 import os.log
+import UIKit
 
 
 /// Adds convenience methods for observing the keyboard showing/hiding. This wraps the `UIResponder`

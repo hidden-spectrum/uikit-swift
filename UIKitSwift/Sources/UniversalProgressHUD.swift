@@ -20,12 +20,12 @@
 //  THE SOFTWARE.
 //
 
-import JGProgressHUD
+import UIKit
 
 
-/// A wrapper class for JGProgressHUD that manages showing/hiding the HUD globally. It keeps an
+/// A wrapper class for LoadingIndicator that manages showing/hiding the indicator globally. It keeps an
 /// internal stack so that multiple show / dismiss calls do not prematurely remove the HUD.
-public struct UniversalProgressHUD {
+public struct UniversalLoadingIndicator {
     
     // MARK: Public
     
@@ -39,7 +39,7 @@ public struct UniversalProgressHUD {
     private static var delayTimer: Timer?
     private static var stackCount: Int = 0
     private static var pendingShowCount: Int = 0
-    private static var progressHud = JGProgressHUD(style: .dark)
+    private static var loadingIndicator = LoadingIndicator(style: .dark)
     
     // MARK: Lifecycle
     
@@ -51,9 +51,9 @@ public struct UniversalProgressHUD {
     /// - Note: This should only be called once before use.
     ///
     /// - Parameters:
-    ///     - progressHud: The `JGProgressHUD` to use.
-    public static func configure(with progressHud: JGProgressHUD) {
-        self.progressHud = progressHud
+    ///     - loadingIndicator: The `LoadingIndicator` to use.
+    public static func configure(with loadingIndicator: LoadingIndicator) {
+        self.loadingIndicator = loadingIndicator
     }
     
     // MARK: Show / Hide
@@ -107,7 +107,7 @@ public struct UniversalProgressHUD {
             return
         }
         
-        self.progressHud.show(in: mainWindow)
+        self.loadingIndicator.show(in: mainWindow)
         
         // Increase the stack count by however many `show(afterDelay:)` calls there were. It doesn't
         // matter if isFromDelayTimer is true or false, we need to account for how many
@@ -146,7 +146,7 @@ public struct UniversalProgressHUD {
         }
         
         self.cancelTimer()
-        self.progressHud.dismiss()
+        self.loadingIndicator.dismiss()
         
         self.stackCount = 0
         self.pendingShowCount = 0
@@ -159,5 +159,88 @@ public struct UniversalProgressHUD {
         
         delayTimer.invalidate()
         self.delayTimer = nil
+    }
+}
+
+
+/// An instance loading indicator 
+public final class LoadingIndicator: UIView {
+    
+    // MARK: Private
+    
+    private struct Defaults {
+        static let animationDuration = 0.2
+    }
+    
+    // MARK: Lifecycle
+    
+    @available(*, unavailable, message: "Use init(style:)")
+    override init(frame: CGRect) {
+        fatalError("This constructor is unavailable.")
+    }
+    
+    public required init(style: UIBlurEffect.Style = .dark) {
+        super.init(frame: CGRect.zero)
+        
+        self.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.backgroundColor = .clear
+        
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let size = CGSize(width: 65.0, height: 65.0)
+        blurEffectView.frame.size = size
+        blurEffectView.center = CGPoint(x: self.center.x, y: self.center.y * 0.65)
+        blurEffectView.layer.cornerRadius = 3.0
+        blurEffectView.layer.masksToBounds = true
+        blurEffectView.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin]
+        blurEffectView.alpha = 0.85
+        blurEffectView.borderWidth = 1.0 / UIScreen.main.scale
+        blurEffectView.borderColor = style == .dark ? UIColor.black.withAlphaComponent(0.25) : .clear
+        self.addSubview(blurEffectView)
+        
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.style = .whiteLarge
+        activityIndicator.color = style == .dark ? UIColor.white : UIColor.lightGray
+        activityIndicator.sizeToFit()
+        activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin]
+        activityIndicator.frame = CGRect(
+            x: blurEffectView.frame.size.width / 2 - activityIndicator.frame.size.width / 2,
+            y: blurEffectView.frame.size.height / 2 - activityIndicator.frame.size.height / 2,
+            width: activityIndicator.frame.size.width,
+            height: activityIndicator.frame.size.height
+        )
+        blurEffectView.contentView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+    }
+    
+    @available(*, unavailable, message: "init(coder:) has not been implemented")
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Display Control
+    
+    public func show(in view: UIView, animated: Bool = true) {
+        self.alpha = 0
+        
+        self.frame = view.bounds
+        view.addSubview(self)
+        
+        UIView.animate(withDuration: animated ? Defaults.animationDuration : 0, animations: {
+            self.alpha = 1
+        }, completion: nil)
+    }
+    
+    public func dismiss(animated: Bool = true) {
+        guard animated else {
+            self.removeFromSuperview()
+            return
+        }
+        
+        UIView.animate(withDuration: Defaults.animationDuration, delay: 0, options: .beginFromCurrentState, animations: {
+            self.alpha = 0
+        }, completion: { _ in
+            self.removeFromSuperview()
+        })
     }
 }
