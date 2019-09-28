@@ -190,7 +190,7 @@ public final class LoadingIndicator: UIView {
         let size = CGSize(width: 65.0, height: 65.0)
         blurEffectView.frame.size = size
         blurEffectView.center = CGPoint(x: self.center.x, y: self.center.y * 0.65)
-        blurEffectView.layer.cornerRadius = 3.0
+        blurEffectView.layer.cornerRadius = 10
         blurEffectView.layer.masksToBounds = true
         blurEffectView.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin]
         blurEffectView.alpha = 0.85
@@ -200,7 +200,7 @@ public final class LoadingIndicator: UIView {
         
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.style = .whiteLarge
-        activityIndicator.color = style == .dark ? UIColor.white : UIColor.lightGray
+        activityIndicator.color = style == .dark ? .white : .black
         activityIndicator.sizeToFit()
         activityIndicator.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleLeftMargin, .flexibleRightMargin]
         activityIndicator.frame = CGRect(
