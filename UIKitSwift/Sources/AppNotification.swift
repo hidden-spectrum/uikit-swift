@@ -23,32 +23,35 @@
 import Foundation
 
 
-/// A basic protocol that defines something that contains arbitrary items.
-public protocol ItemContainer {
-    associatedtype Item: Equatable
-    var items: [Item] { get }
+/// Represents a type that can be sent via `NotificationCenter`.
+public protocol AppNotification {
+    
+    /// The notification name. By default this uses the type name.
+    static var name: Notification.Name { get }
 }
 
-
-/// Contains an arbitrary array of Equatable items.
-public struct Section<T: Equatable>: ItemContainer {
-    public let items: [T]
-    
-    public init(items: [T]) {
-        self.items = items
+public extension AppNotification {
+    static var name: Notification.Name {
+        return Notification.Name("\(type(of: self))")
     }
 }
 
 
-public extension Array where Element: ItemContainer {
+public extension NotificationCenter {
     
-    /// Looks up the index of the `ItemContainer` in an array that contains the given item.
-    ///
-    /// - Parameter item: The item to search for.
-    /// - Returns: The first index of the `ItemContainer` containing the item, or nil.
-    func indexContaining(item: Element.Item) -> Int? {
-        return self.firstIndex(where: { element -> Bool in
-            return element.items.contains(item)
-        })
+    /// Adds an observer for the given `AppNotification` type.
+    func addObserver<T: AppNotification>(object: Any? = nil, queue: OperationQueue? = nil, using block: @escaping (T) -> Void) -> NSObjectProtocol {
+        return self.addObserver(forName: T.name, object: object, queue: queue) { notification in
+            guard let appNotification = notification.object as? T else {
+                return
+            }
+            block(appNotification)
+        }
+    }
+    
+    /// Posts the given `AppNotification`.`
+    func post<T: AppNotification>(_ appNotification: T) {
+        self.post(name: T.name, object: appNotification)
     }
 }
+
