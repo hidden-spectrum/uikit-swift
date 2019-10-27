@@ -10,7 +10,10 @@ let package = Package(
     targets: [
         .target(
             name: "UIKitSwift",
-            path: "UIKitSwift"
+            path: "UIKitSwift",
+            linkerSettings: [
+                .linkedFramework("UIKit")
+            ]
         )
     ]
 )
