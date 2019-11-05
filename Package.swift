@@ -7,9 +7,13 @@ let package = Package(
     products: [
         .library(name: "UIKitSwift", targets: ["UIKitSwift"])
     ],
+    dependencies: [
+        .package(url: "https://github.com/JonasGessner/JGProgressHUD", .upToNextMajor(from: "2.1.0"))
+    ],
     targets: [
         .target(
             name: "UIKitSwift",
+            dependencies: ["JGProgressHUD"],
             path: "UIKitSwift"
         )
     ]
