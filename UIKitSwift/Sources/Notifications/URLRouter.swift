@@ -24,7 +24,7 @@ import UIKit
 
 
 /// Protocol that defines a type that can handle an incoming URL.
-public protocol URLHandler: class {
+public protocol URLHandler: AnyObject {
     func handle(_ url: URL, pathVariables: [String: String], options: [UIApplication.OpenURLOptionsKey: Any]?) -> Bool
 }
 
